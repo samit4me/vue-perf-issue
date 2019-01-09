@@ -2,11 +2,25 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">About</router-link> |
+      <router-link to="/page-one">Page One</router-link> |
+      <router-link to="/page-two">Page Two</router-link>
     </div>
     <router-view/>
   </div>
 </template>
+
+<script>
+export default {
+  created() {
+    window.router = this.$router;
+    setInterval(() => {
+      this.$store.dispatch('incrementTest');
+    }, 2000);
+  },
+};
+</script>
+
 
 <style>
 #app {

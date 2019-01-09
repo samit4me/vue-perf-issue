@@ -21,5 +21,29 @@ export default new Router({
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
     },
+    {
+      path: '/page-one',
+      name: 'page-one',
+      component: () => import('./views/PageOne.vue'),
+      // beforeEnter(to, from, next) {
+      //   console.log('## enter', to, from, next);
+      //   next();
+      //   // called before the route that renders this component is confirmed.
+      //   // does NOT have access to `this` component instance,
+      //   // because it has not been created yet when this guard is called!
+      // },
+      // beforeLeave(to, from, next) {
+      //   console.log('## leave', to, from, next)
+      //   next();
+      //   // called when the route that renders this component is about to
+      //   // be navigated away from.
+      //   // has access to `this` component instance.
+      // },
+    },
+    {
+      path: '/page-two',
+      name: 'page-two',
+      component: () => import('./views/PageTwo.vue'),
+    },
   ],
 });

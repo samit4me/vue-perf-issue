@@ -14,5 +14,10 @@ export default {
   components: {
     HelloWorld,
   },
+  mounted() {
+    window.routeT1 = performance.now();
+    window.removeSubCount = 0;
+    console.log(`Took ${parseInt(window.routeT1 - window.routeT0, 10)} milliseconds.`);
+  },
 };
 </script>
